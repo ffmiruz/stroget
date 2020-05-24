@@ -1,0 +1,14 @@
+# Sketch
+
+### Components
+
+1. deployed function at netlify (from outside for now)
+
+2. Github actions that called netlify function. (cron every 24 hour)
+	Call reddit for searc terms data r/FashionRepsBST.json
+		remove top 2 listing //remove pinned thread
+		cut '[][]' in title, then only get 5 splitted words //get good enough search terms
+	Each terms make request to function (give url, return an item listing)
+	Save page of all listing into a file
+	Compile with tinystatic
+	Deploy to netlify by updating folder in place

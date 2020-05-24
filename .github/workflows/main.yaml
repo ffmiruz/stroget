@@ -1,0 +1,21 @@
+on:
+  schedule:
+    - cron:  '0 */12 * * *' # At minute 0 past every 12th hour. Ref https://crontab.guru/examples.html
+name: Scrape Data
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up Go
+      uses: actions/setup-go@v1
+      with:
+       go-version: 1.14
+    - uses: actions/checkout@master
+    - name: Run
+      run: go run main.go 
+      # env:
+      #   WHATEVER_TOKEN: ${{ secrets.YOU_WANT }}
+    - uses: mikeal/publish-to-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub sets this for you
