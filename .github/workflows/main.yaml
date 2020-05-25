@@ -1,7 +1,6 @@
 on:
-  push:
-    branches:
-      - master
+  schedule:
+    - cron:  '55 */6 * * *' # At minute 55 past every 6th hour. Ref https://crontab.guru/examples.html
 jobs:
   build:
     name: Build
