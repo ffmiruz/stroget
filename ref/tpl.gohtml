@@ -1,21 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="icon" href="https://via.placeholder.com/70x70">
+    <link rel="icon" href="./hexasharp.svg">
     <link rel="stylesheet" href="./mvp.css">
-
     <meta charset="utf-8">
     <meta name="description" content="My description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>My title</title>
 </head>
-
 <body>
     <header>
         <nav>
-            <a href="/"><img alt="Logo" src="https://via.placeholder.com/70x70" height="70"></a>
+            <a href="/"><img alt="Logo" src="./hexasharp.svg" height="70"></a>
             <ul>
                 <li><a href="#">Menu</a>
                     <ul>
@@ -33,10 +29,8 @@
             {{range .}}
             <aside>
                 <sup>{{.Currency}}{{.Price}}</sup>
-                <div>
-                    <a href="{{.Url}}"><h3>{{.Title}}</h3></a>
-                </div>
-                <img alt="MIT license" src="{{.Img}}">
+                <div><a href="{{.Url}}"><h3>{{.Title}}</h3></a></div>
+                <img alt="{{.Title}}" src="{{.Img}}">
                 <a href="{{.Url}}"><button>View Item</button></a>
             </aside>
             {{end}}
@@ -50,9 +44,7 @@
     </main>
     <footer>
         <hr>
-        <p>
-            wiccc8@gmail.com
-        </p>
+        <p>wiccc8@gmail.com</p>
     </footer>
 </body>
 
