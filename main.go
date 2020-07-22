@@ -142,6 +142,9 @@ func request(ch chan Product, u string) {
 		ch <- p
 		return
 	}
+	if strings.HasPrefix(img, "http:") {
+		img = strings.Replace(img, "http:", "https:", 1)
+	}
 	if strings.HasPrefix(img, "//") {
 		img = "https:" + img
 	}
