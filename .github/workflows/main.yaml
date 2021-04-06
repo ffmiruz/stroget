@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron:  '55 */6 * * *' # At minute 55 past every 6th hour. Ref https://crontab.guru/examples.html
+    - cron:  '0 0 * * *' # At minute 55 past every 6th hour. Ref https://crontab.guru/examples.html
 jobs:
   build:
     name: Build
